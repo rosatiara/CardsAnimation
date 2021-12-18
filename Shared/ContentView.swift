@@ -49,28 +49,15 @@ struct Card: View {
                 Color.black.ignoresSafeArea()
                 Rectangle()
                     .fill(Color.white)
-                    .frame(width: 280, height: 300)
-                    .cornerRadius(10)
-                VStack {
-                    HStack {
-                        VStack {
-                            Text("SHOPEE YXXXXXXH\nBCA 123457898")
-                                .font(.caption2)
-                                .multilineTextAlignment(.leading)
-
-                        }.padding(.leading,30)
-
-                        Circle()
-                            .frame(width: 40)
-                            .padding(.trailing,30)
-                            .foregroundColor(Color.yellow)
-                    }
-                    Text("Rp40.412")
-                        .foregroundColor(Color.red)
-                        .font(.largeTitle)
-                    
-                }
-
+                    .frame(width: 350, height: 400)
+                    .cornerRadius(13)
+                    .padding(15)
+                    .shadow(color: .gray, radius: 7, x: 5, y: 8)
+                Text("Hello!")
+                    .foregroundColor(.black)
+                    .font(.largeTitle)
+                    .bold()
+                
             }
         }
     }
