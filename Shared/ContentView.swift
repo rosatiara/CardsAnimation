@@ -46,10 +46,31 @@ struct ContentView: View {
 struct Card: View {
         var body: some View {
             ZStack {
+                Color.black.ignoresSafeArea()
                 Rectangle()
                     .fill(Color.white)
-                    .frame(width: 200, height: 300)
-                Text("hellooooo")
+                    .frame(width: 280, height: 300)
+                    .cornerRadius(10)
+                VStack {
+                    HStack {
+                        VStack {
+                            Text("SHOPEE YXXXXXXH\nBCA 123457898")
+                                .font(.caption2)
+                                .multilineTextAlignment(.leading)
+
+                        }.padding(.leading,30)
+
+                        Circle()
+                            .frame(width: 40)
+                            .padding(.trailing,30)
+                            .foregroundColor(Color.yellow)
+                    }
+                    Text("Rp40.412")
+                        .foregroundColor(Color.red)
+                        .font(.largeTitle)
+                    
+                }
+
             }
         }
     }
