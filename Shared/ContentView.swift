@@ -15,8 +15,10 @@ struct ContentView: View {
             .updating($dragState){
                 (value, state, transaction) in state = .dragging(translation: value.translation)
             }
-        Card()
-        
+        ZStack {
+            Cards()
+            MainCard()
+        }
     }
     
     enum DragState {
@@ -42,21 +44,37 @@ struct ContentView: View {
         }
     }
 }
-
-struct Card: View {
+struct Cards: View {
+    var title: String
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .fill(Color(red: 221 / 255, green: 190 / 255, blue: 169  / 255))
+                .frame(width: 350, height: 400)
+                .cornerRadius(13)
+                .padding(15)
+                .shadow(color: .gray, radius: 7, x: 5, y: 8)
+            Text(title)
+                .foregroundColor(.black)
+                .font(.largeTitle)
+                
+        }
+    }
+}
+struct MainCard: View {
+    var title: String
         var body: some View {
             ZStack {
                 Color.black.ignoresSafeArea()
                 Rectangle()
-                    .fill(Color.white)
+                    .fill(Color(red: 203 / 255, green: 153 / 255, blue: 126 / 255))
                     .frame(width: 350, height: 400)
                     .cornerRadius(13)
                     .padding(15)
                     .shadow(color: .gray, radius: 7, x: 5, y: 8)
-                Text("Hello!")
+                Text(title)
                     .foregroundColor(.black)
                     .font(.largeTitle)
-                    .bold()
                 
             }
         }
